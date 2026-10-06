@@ -177,16 +177,16 @@ export const TRISTATE_LAWS_DATA = [
     },
     uniform_rule: "All 3 jurisdictions require 0.00% BAC (Zero Tolerance under 21), cell-phone hands-free laws, and mandatory supervised log books.",
     uniform_rule_fa: "هر سه حوزه دارای قانون عدم تحمل مصرف الکل (زیر ۲۱ سال)، ممنوعیت کامل استفاده از موبایل برای نوجوانان و الزام دفترچه ثبت ساعات تمرین هستند.",
-    mva_gotcha: "In Maryland, any ticket or moving violation during your 18-month provisional phase RESTARTS the entire 18-month waiting period from day zero!",
-    mva_gotcha_fa: "نکته حیاتی مریلند: هرگونه جریمه یا تخلف حرکتی در دوره ۱۸ ماهه گواهینامه مشروط، شمارش معکوس ۱۸ ماهه را صفر کرده و از ابتدا شروع می‌کند!"
+    mva_gotcha: "In Maryland, provisional license holders must keep a completely clean, violation-free driving record. A moving violation can delay your progress toward a Full License — always confirm the current consequences with the MVA, since this can change.",
+    mva_gotcha_fa: "نکته مهم مریلند: راننده مشروط باید سابقه رانندگی کاملاً پاک و بدون تخلف داشته باشد. تخلف حرکتی می‌تواند روند دریافت گواهینامه کامل را به تاخیر بیندازد — جزئیات دقیق را حتماً از MVA تایید کنید چون ممکن است تغییر کرده باشد."
   },
   {
     id: "move_over",
     category: "Move Over Law (حفظ فاصله با خودروهای متوقف)",
     category_fa: "قانون تغییر خط برای خودروهای متوقف و امدادی",
     maryland: {
-      rule: "Must vacate closest lane or slow to reasonable speed for ALL stationary vehicles with hazard lights or warning signs (expanded law covers tow trucks, police, ambulances, utility, and broken-down personal cars).",
-      penalty: "$110 fine + 1 point; $750 if contributing to an accident."
+      rule: "Must vacate the closest lane or slow to a reasonable speed for stopped emergency/law-enforcement vehicles (police, fire/rescue, ambulance, utility-emergency) displaying active emergency lights. Confirm with current MVA materials whether coverage has since been expanded to other stationary vehicles.",
+      penalty: "$80 fine + 1 point; $120 if it contributes to a crash (per the MVA curriculum guide)."
     },
     virginia: {
       rule: "Must move over one lane or reduce speed below limit for emergency vehicles and any stationary vehicle displaying flashing red, blue, amber, or hazard lights.",
@@ -198,8 +198,8 @@ export const TRISTATE_LAWS_DATA = [
     },
     uniform_rule: "Never speed past emergency lights or hazard flashers in the adjacent lane. Always scan mirrors, signal early, and shift one lane to the left safely.",
     uniform_rule_fa: "هیچ‌گاه با سرعت از کنار چراغ‌های چشمک‌زن یا فلاشر عبور نکنید. زودتر راهنما بزنید و یک لاین فاصله بگیرید یا سرعت را به شدت کاهش دهید.",
-    mva_gotcha: "During the MVA test, failing to safely give room to a stopped sanitation truck or postal vehicle counts as an unsafe lane maneuver!",
-    mva_gotcha_fa: "در آزمون عملی MVA، عدم رعایت فاصله ایمن با ماشین پست یا نظافت متوقف شده می‌تواند نمره منفی سنگین ایجاد کند!"
+    mva_gotcha: "During the MVA test, failing to safely give room to a stopped emergency/law-enforcement vehicle counts as an unsafe lane maneuver!",
+    mva_gotcha_fa: "در آزمون عملی MVA، عدم رعایت فاصله ایمن با خودروی امدادی یا پلیس متوقف‌شده می‌تواند نمره منفی ایجاد کند!"
   },
   {
     id: "right_turn_red",
@@ -713,49 +713,49 @@ export interface MockQuizQuestion {
 export const MOCK_QUIZ_QUESTIONS: MockQuizQuestion[] = [
   {
     id: "q_provisional_reset",
-    question_en: "If a Maryland provisional driver receives a moving violation ticket during their 18-month holding period, what occurs?",
-    question_fa: "اگر راننده‌ای در دوره ۱۸ ماهه گواهینامه مشروط (Provisional) مریلند جریمه تخلف حرکتی دریافت کند، چه اتفاقی می‌افتد؟",
+    question_en: "Before a Maryland learner's permit holder may take the MVA road test, what driving-record condition must they meet?",
+    question_fa: "قبل از اینکه دارنده پرمیت (گواهینامه موقت) مریلند بتواند در آزمون جاده MVA شرکت کند، باید چه شرط مربوط به سابقه رانندگی را داشته باشد؟",
     state_tag: "Maryland MVA",
     options_en: [
-      "A $50 fine with no impact on the 18-month timeline.",
-      "The entire 18-month waiting period completely resets to day zero from the date of the citation.",
-      "The provisional license is permanently revoked with no opportunity to re-apply.",
-      "The driver only needs to complete an online survey within 30 days."
+      "No requirement at all — any driving record is accepted.",
+      "They must have gone a required minimum period with a clean record, free of moving violations, as set by the Graduated Licensing System (GLS).",
+      "They must have at least one prior at-fault accident to prove real-world experience.",
+      "A one-time $50 administrative fee with no record requirement."
     ],
     options_fa: [
-      "فقط ۵۰ دلار جریمه نقدی بدون هیچ تاثیری بر زمان ۱۸ ماهه.",
-      "کل دوره ۱۸ ماهه به طور کامل صفر شده و شمارش ۱۸ ماه از تاریخ تخلف از ابتدا آغاز می‌شود.",
-      "گواهینامه مشروط برای همیشه باطل شده و امکان درخواست مجدد وجود ندارد.",
-      "راننده فقط باید یک نظرسنجی اینترنتی را ظرف ۳۰ روز پر کند."
+      "هیچ شرطی لازم نیست — هر سابقه‌ای قابل قبول است.",
+      "باید یک دوره حداقلی مشخص‌شده توسط سیستم گواهینامه مرحله‌ای (GLS) را بدون هیچ تخلف حرکتی، با سابقه پاک، طی کرده باشد.",
+      "باید حداقل یک تصادف مقصرانه قبلی داشته باشد تا تجربه واقعی را ثابت کند.",
+      "فقط یک بار پرداخت ۵۰ دلار هزینه اداری، بدون نیاز به شرط خاصی برای سابقه."
     ],
     correct_index: 1,
-    explain_why_en: "Under Maryland Graduated Licensing System (GLS) regulations (MD Code, Transportation § 16-113), provisional license holders must maintain a completely clean, conviction-free driving record for 18 consecutive months. Any moving violation, seatbelt ticket, or at-fault accident automatically restarts the 18-month clock from the date the sanction is resolved.",
-    explain_why_fa: "طبق قوانین سیستم گواهینامه مرحله‌ای مریلند (GLS ماده ۱۶-۱۱۳)، راننده مشروط باید ۱۸ ماه متوالی سابقه کاملا پاک و بدون تخلف داشته باشد. هرگونه جریمه حرکتی، نبستن کمربند یا تصادف مقصرانه باعث ریست شدن کل ۱۸ ماه می‌شود و شمارش معکوس دوباره از روز اول آغاز می‌گردد.",
-    statute_reference: "MD Transp. Code § 16-113(d) - GLS Sanctions",
-    instructor_tip: "Sam's Tip: Defensive driving habits in our dual-brake cars protect your provisional status so you reach your Full Unrestricted License on schedule!"
+    explain_why_en: "Maryland's Graduated Licensing System requires new drivers to maintain a clean, violation-free record for a required minimum period before advancing to the next license stage. A moving violation can delay that progress. Exact current waiting-period lengths and reset rules should be confirmed directly with the MVA, since the dataset's earlier claim of an automatic '18-month reset to day zero' could not be verified against the official MVA classroom curriculum and has been removed pending confirmation.",
+    explain_why_fa: "سیستم گواهینامه مرحله‌ای مریلند (GLS) الزام می‌کند که راننده تازه‌کار برای مدتی مشخص، سابقه کاملاً پاک و بدون تخلف داشته باشد تا به مرحله بعدی گواهینامه برسد. یک تخلف حرکتی می‌تواند این روند را به تاخیر بیندازد. طول دقیق این دوره‌ها و قوانین ریست باید مستقیماً از MVA تایید شود؛ ادعای قبلی «ریست خودکار ۱۸ ماهه به صفر» از کوریکولوم رسمی MVA قابل تایید نبود و تا تایید مجدد حذف شد.",
+    statute_reference: "Maryland Graduated Licensing System (GLS) — verify exact section with current MD Transportation Code",
+    instructor_tip: "Sam's Tip: Defensive driving habits in our dual-brake cars help protect your clean record so you progress through the GLS stages on schedule!"
   },
   {
     id: "q_move_over_expanded",
-    question_en: "Under Maryland's expanded 'Move Over' law, which vehicles are drivers legally required to vacate a lane or slow down for?",
-    question_fa: "طبق قانون گسترش‌یافته Move Over در مریلند، رانندگان موظفند لاین خود را برای چه خودروهایی خالی کنند یا سرعت را کاهش دهند؟",
+    question_en: "Under Maryland's 'Move Over' law (as taught in the official MVA driver education curriculum), which vehicles must drivers vacate a lane or slow down for?",
+    question_fa: "طبق قانون Move Over مریلند (آن‌طور که در کوریکولوم رسمی آموزش رانندگی MVA تدریس می‌شود)، رانندگان باید لاین خود را برای چه خودروهایی خالی کنند یا سرعت را کاهش دهند؟",
     state_tag: "Maryland MVA",
     options_en: [
-      "Only marked Police cruisers and fire engines with sirens active.",
+      "Stopped emergency and law-enforcement vehicles (police, fire/rescue, ambulance, utility-emergency) displaying active emergency lights.",
       "Only State Highway Administration snow plows.",
-      "ALL stationary vehicles displaying hazard warning lights, flares, amber/yellow signals, or emergency lights.",
+      "ALL stationary vehicles with any kind of hazard lights, including ordinary broken-down personal cars.",
       "Only vehicles stopped on the left-hand median of interstate highways."
     ],
     options_fa: [
-      "تنها ماشین‌های پلیس و آتش‌نشانی با آژیر فعال.",
+      "خودروهای امدادی و انتظامی متوقف‌شده (پلیس، آتش‌نشانی، آمبولانس، خودروهای اضطراری تاسیسات) که چراغ اضطراری فعال دارند.",
       "تنها ماشین‌های برف‌روب اداره بزرگراه‌های ایالتی.",
-      "تمامی خودروهای متوقف در شانه راه که چراغ فلاشر اضطراری، فلر یا چراغ‌های زرد/امدادی دارند (حتی خودروهای شخصی خراب).",
+      "تمامی خودروهای متوقف با هر نوع چراغ هشدار، حتی خودروهای شخصی خراب‌شده معمولی.",
       "تنها خودروهایی که در جدول سمت چپ اتوبان‌های بین ایالتی متوقف شده‌اند."
     ],
-    correct_index: 2,
-    explain_why_en: "Maryland dramatically expanded its Move Over Law (§ 21-405). Originally limited to emergency responders and tow trucks, Maryland law now protects ALL stationary vehicles displaying hazard lights, emergency lights, or warning devices. Drivers must vacate the adjacent lane if safe, or significantly reduce speed to a reasonable pace.",
-    explain_why_fa: "مریلند قانون Move Over (ماده ۲۱-۴۰۵) را به طور چشمگیری گسترش داد. در ابتدا این قانون فقط شامل پلیس و امداد بود، اما اکنون شامل تمامی خودروهای متوقف با چراغ فلاشر یا هشدار (حتی خودروهای شخصی نقص فنی پیدا کرده) می‌شود. راننده باید خط مجاور را خالی کند یا سرعت را به شدت کاهش دهد.",
-    statute_reference: "MD Transportation Code § 21-405(e) - Expanded Stationary Vehicle Protection",
-    instructor_tip: "Test Gotcha: Failing to give clearance to a stopped postal or roadside vehicle during your MVA road test is penalized as an unsafe lane maneuver!"
+    correct_index: 0,
+    explain_why_en: "Per the official Maryland MVA driver education curriculum (2019 edition), the Move Over law applies to stopped emergency/law-enforcement vehicles with active emergency lights; drivers must change lanes or reduce speed. An earlier version of this flashcard claimed the law had been 'expanded' to cover all stationary vehicles including ordinary broken-down cars — that broader claim could not be confirmed against the official curriculum and has been corrected. If Maryland law has since been expanded, verify the current scope directly with the MVA before republishing.",
+    explain_why_fa: "طبق کوریکولوم رسمی آموزش رانندگی MVA مریلند (نسخه ۲۰۱۹)، قانون Move Over شامل خودروهای امدادی/انتظامی متوقف‌شده با چراغ اضطراری فعال است؛ راننده باید لاین را عوض کند یا سرعت را کم کند. نسخه قبلی این فلش‌کارت ادعا می‌کرد این قانون «گسترش‌یافته» و شامل همه خودروهای متوقف از جمله ماشین‌های شخصی خراب‌شده است — این ادعای گسترده‌تر از کوریکولوم رسمی قابل تایید نبود و اصلاح شد. اگر قانون مریلند از آن زمان گسترش یافته، قبل از انتشار مجدد حتماً با MVA تایید کنید.",
+    statute_reference: "Maryland MVA Driver Education Curriculum (2019) — verify current statute scope with MVA directly",
+    instructor_tip: "Test Gotcha: Failing to give clearance to a stopped police, fire, rescue, or utility-emergency vehicle during your MVA road test is penalized as an unsafe lane maneuver!"
   },
   {
     id: "q_dc_right_turn_red",
@@ -856,20 +856,20 @@ export const MOCK_QUIZ_QUESTIONS: MockQuizQuestion[] = [
     state_tag: "Maryland MVA",
     options_en: [
       "9:00 PM to 4:00 AM every night.",
-      "12:00 AM (Midnight) to 5:00 AM, unless accompanied by a licensed driver 21+ or travelling for employment/school.",
+      "12:00 AM (Midnight) to 5:00 AM, unless driving directly to/from work, official school activities, organized volunteer programs, or athletic training.",
       "Only during snowstorm emergencies.",
       "There is no nighttime curfew in Maryland."
     ],
     options_fa: [
       "۹ شب تا ۴ صبح در تمام شب‌ها.",
-      "۱۲ نیمه‌شب تا ۵ صبح، مگر با همراهی فرد دارای گواهینامه بالای ۲۱ سال یا تردد مستقیم کاری/مدرسه.",
+      "۱۲ نیمه‌شب تا ۵ صبح، مگر در مسیر مستقیم کار، فعالیت رسمی مدرسه، برنامه داوطلبانه سازمان‌یافته یا تمرین ورزشی.",
       "تنها در شرایط بحرانی برف و کولاک.",
       "در مریلند هیچ‌گونه منع تردد شبانه‌ای وجود ندارد."
     ],
     correct_index: 1,
-    explain_why_en: "Under MD Transportation Code § 16-113, provisional license holders under 18 years old may not drive between 12:00 AM (midnight) and 5:00 AM unless accompanied by a licensed supervising driver who is at least 21 years old and has 3 years of driving experience, or if driving directly to/from work, official school activities, organized volunteer programs, or athletic training.",
-    explain_why_fa: "طبق ماده ۱۶-۱۱۳ مریلند، رانندگان مشروط زیر ۱۸ سال مجاز به رانندگی بین ۱۲ نیمه‌شب تا ۵ صبح نیستند مگر با همراهی فرد دارای گواهینامه حداقل ۲۱ ساله با ۳ سال سابقه رانندگی یا تردد مستقیم به محل کار، فعالیت رسمی مدرسه یا فعالیت داوطلبانه.",
-    statute_reference: "MD Transportation Code § 16-113(d)(1) - Provisional Curfew",
+    explain_why_en: "Per the official Maryland MVA driver education curriculum, provisional license holders under 18 years old may not drive between 12:00 AM (midnight) and 5:00 AM unless driving directly to/from work, official school activities, organized volunteer programs, or athletic training. (An earlier version of this flashcard added an 'accompanied by a licensed driver 21+' exception for the curfew specifically — that exception could not be confirmed in the official curriculum and was removed; confirm current law with the MVA before publishing.)",
+    explain_why_fa: "طبق کوریکولوم رسمی آموزش رانندگی MVA مریلند، دارندگان گواهینامه مشروط زیر ۱۸ سال مجاز به رانندگی بین ۱۲ نیمه‌شب تا ۵ صبح نیستند مگر در مسیر مستقیم کار، فعالیت رسمی مدرسه، برنامه داوطلبانه سازمان‌یافته یا تمرین ورزشی. (نسخه قبلی این فلش‌کارت استثنای «همراهی فرد بالای ۲۱ سال» را برای این ساعت منع تردد اضافه کرده بود — این استثنا در کوریکولوم رسمی تایید نشد و حذف شد؛ قبل از انتشار از MVA تایید بگیرید.)",
+    statute_reference: "Maryland MVA Driver Education Curriculum — verify exact statute section with current MD Transportation Code",
     instructor_tip: "High School Teens: Keep a printed work schedule or school extracurricular pass in your glove compartment if commuting home near midnight!"
   },
   {
@@ -1457,20 +1457,20 @@ export const MOCK_QUIZ_QUESTIONS: MockQuizQuestion[] = [
     category_label_fa: "دوره ۳۶ ساعته و خدمات آموزشگاه",
     options_en: [
       "15 hours of video watching only with no driving.",
-      "30 hours of interactive classroom/Zoom instruction (10-day PM course) + 6 hours Behind-the-Wheel (BTW) training with a minimum 80% passing grade on the final exam.",
+      "30 hours of classroom instruction + 6 hours of individual Behind-the-Wheel (BTW) training, as mandated by the Maryland Graduated Licensing System (GLS).",
       "36 hours of parking lot driving with no classroom.",
       "Only taking a 10-minute online quiz."
     ],
     options_fa: [
       "فقط ۱۵ ساعت تماشای ویدیو بدون رانندگی عملی.",
-      "۳۰ ساعت کلاس آنلاین تعاملی در زوم (دوره ۱۰ روزه عصرانه) + ۶ ساعت آموزش عملی پشت فرمان (BTW) با حداقل نمره قبولی ۸۰٪ در آزمون جامع پایان دوره.",
+      "۳۰ ساعت آموزش کلاسی + ۶ ساعت آموزش عملی فردی پشت فرمان (BTW)، طبق الزام سیستم گواهینامه مرحله‌ای (GLS) مریلند.",
       "۳۶ ساعت رانندگی در پارکینگ بدون هیچ کلاس تئوری.",
       "تنها شرکت در یک آزمون اینترنتی ۱۰ دقیقه‌ای."
     ],
     correct_index: 1,
-    explain_why_en: "Maryland COMAR 11.23.02 mandates that certified driving schools deliver 30 hours of classroom curriculum plus 6 hours of individual behind-the-wheel instruction. Sam's Driving School delivers the 30-hour theory via interactive Zoom evening classes, followed by 6 hours of BTW in dual-brake cars, certifying completion directly to the MVA database.",
-    explain_why_fa: "طبق آیین‌نامه COMAR 11.23.02 مریلند، گذراندن ۳۰ ساعت آموزش تئوری کلاسی به همراه ۶ ساعت آموزش عملی فردی پشت فرمان الزامی است. آموزشگاه سام ۳۰ ساعت تئوری را به صورت کلاس آنلاین عصرانه در زوم و ۶ ساعت عملی را در خیابان با خودروهای دو پداله آموزش داده و گواهی را مستقیماً به دیتابیس MVA ارسال می‌کند.",
-    statute_reference: "COMAR 11.23.02 & MD Transp. Code § 16-105(f) - Driver Education Curriculum Standards",
+    explain_why_en: "Per the official Maryland MVA driver education curriculum preface, the Graduated Licensing System (GLS) mandates a minimum of 30 hours of classroom instruction plus a minimum of 6 hours of individual behind-the-wheel instruction before a first noncommercial license. Sam's Driving School delivers this 30+6 structure. (An earlier version of this flashcard added a specific '80% passing grade' and a '10-day evening Zoom' format — those details could not be confirmed in the official curriculum and have been removed; confirm current exam-passing requirements and course scheduling format directly with the MVA/COMAR before publishing.)",
+    explain_why_fa: "طبق مقدمه کوریکولوم رسمی آموزش رانندگی MVA مریلند، سیستم گواهینامه مرحله‌ای (GLS) حداقل ۳۰ ساعت آموزش کلاسی و حداقل ۶ ساعت آموزش عملی فردی پشت فرمان را قبل از دریافت اولین گواهینامه غیرتجاری الزامی می‌کند. آموزشگاه سام همین ساختار ۳۰+۶ را اجرا می‌کند. (نسخه قبلی این فلش‌کارت عدد «نمره قبولی ۸۰٪» و فرمت «۱۰ روز کلاس عصرانه زوم» را اضافه کرده بود — این جزئیات در کوریکولوم رسمی تایید نشد و حذف شد؛ الزامات دقیق نمره قبولی و فرمت دوره را از MVA/COMAR قبل از انتشار تایید کنید.)",
+    statute_reference: "Maryland GLS — 30hr classroom + 6hr BTW per curriculum Preface; verify exact COMAR citation and passing-grade requirement with MVA",
     instructor_tip: "Sam's Scheduling: Finish your 10-day Zoom course first; your BTW lessons are scheduled smoothly immediately after to lock in muscle memory!"
   },
   {
@@ -1587,20 +1587,20 @@ export const MOCK_QUIZ_QUESTIONS: MockQuizQuestion[] = [
     category_label_fa: "قوانین مریلند، دی‌سی و ویرجینیا",
     options_en: [
       "All three jurisdictions require exactly 20 hours.",
-      "Maryland requires 60 hours (min. 10 night); Virginia requires 45 hours (min. 15 night); Washington D.C. requires 40 hours (min. 10 night).",
+      "Maryland requires 60 hours for drivers under 25 (min. 10 night) or 14 hours for drivers 25+; Virginia requires 45 hours (min. 15 night); Washington D.C. requires 40 hours (min. 10 night) — verify VA/DC figures with those states' official sources.",
       "Virginia requires 100 hours; Maryland requires 20 hours; D.C. requires no log book.",
       "Night driving hours are completely optional in all three states."
     ],
     options_fa: [
       "هر سه حوزه دقیقاً به ۲۰ ساعت تمرین نیاز دارند.",
-      "مریلند به ۶۰ ساعت (حداقل ۱۰ ساعت در شب)؛ ویرجینیا به ۴۵ ساعت (حداقل ۱۵ ساعت در شب)؛ و واشنگتن دی‌سی به ۴۰ ساعت (حداقل ۱۰ ساعت در شب) نیاز دارد.",
+      "مریلند به ۶۰ ساعت (حداقل ۱۰ ساعت در شب) برای زیر ۲۵ سال، یا ۱۴ ساعت برای ۲۵ سال و بالاتر؛ ویرجینیا به ۴۵ ساعت (حداقل ۱۵ ساعت در شب)؛ و واشنگتن دی‌سی به ۴۰ ساعت (حداقل ۱۰ ساعت در شب) نیاز دارد — اعداد ویرجینیا و دی‌سی را از منابع رسمی همان ایالت‌ها تایید کنید.",
       "ویرجینیا ۱۰۰ ساعت، مریلند ۲۰ ساعت و دی‌سی نیازی به ثبت ساعات ندارد.",
       "ساعات رانندگی در شب در هر سه ایالت کاملاً اختیاری است."
     ],
     correct_index: 1,
-    explain_why_en: "Maryland enforces the highest practice threshold in the region with 60 total hours (at least 10 at night) signed off by a licensed driver 21+ with 3+ years experience. Virginia requires 45 hours (15 night), and Washington D.C. GRAD program requires 40 hours (10 night).",
-    explain_why_fa: "مریلند با الزام ۶۰ ساعت تمرین (حداقل ۱۰ ساعت در شب) بالاترین استاندارد منطقه را دارد که باید توسط فرد بالای ۲۱ سال با حداقل ۳ سال سابقه گواهینامه امضا شود. ویرجینیا ۴۵ ساعت (۱۵ ساعت شب) و دی‌سی ۴۰ ساعت (۱۰ ساعت شب) تمرین می‌خواهد.",
-    statute_reference: "MD Transp. Code § 16-105, VA Code § 46.2-334.01, DCMR Title 18 § 105",
+    explain_why_en: "Per the official Maryland MVA driver education curriculum, Maryland requires 60 total supervised practice hours (at least 10 at night) for drivers under 25 — but only 14 hours for drivers 25 and older. (An earlier version of this flashcard presented 60 hours as universal; the age condition is confirmed directly in the MVA curriculum and has been added.) Virginia's 45-hour and D.C.'s 40-hour figures are outside the scope of the Maryland curriculum and should be verified with each jurisdiction's own official source before publishing.",
+    explain_why_fa: "طبق کوریکولوم رسمی آموزش رانندگی MVA مریلند، ۶۰ ساعت تمرین نظارت‌شده (حداقل ۱۰ ساعت در شب) فقط برای رانندگان زیر ۲۵ سال الزامی است — برای ۲۵ سال به بالا فقط ۱۴ ساعت لازم است. (نسخه قبلی این فلش‌کارت عدد ۶۰ ساعت را به‌صورت عمومی ارائه می‌داد؛ این شرط سنی مستقیماً در کوریکولوم MVA تایید شده و اضافه شد.) اعداد ویرجینیا (۴۵ ساعت) و دی‌سی (۴۰ ساعت) خارج از محدوده کوریکولوم مریلند هستند و باید از منبع رسمی همان ایالت تایید بشن.",
+    statute_reference: "Maryland MVA Driver Education Curriculum — VA/DC figures unverified, confirm with VA DMV and DC DMV directly",
     instructor_tip: "Log Tip: Keep a clean log book. At Sam's Driving School, our instructors sign off on your official hours during each Behind-the-Wheel lesson!"
   },
   {
