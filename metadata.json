@@ -1,0 +1,6 @@
+{
+  "name": "Sam's Driving School - Maryland MVA Content & AI Prompt Studio",
+  "description": "Bilingual (English & Persian) social media content architect and photo/video prompt studio for Maryland MVA driving education, Tri-State laws, and road test success.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
